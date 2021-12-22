@@ -9,8 +9,8 @@ public class Tunnel {
         this.end=e;
     }
 
-    public void carry_player(){
-        //translate transition
+    public void carry_player(Player P){
+        P.linear_move(start,end);
     }
 
 }
