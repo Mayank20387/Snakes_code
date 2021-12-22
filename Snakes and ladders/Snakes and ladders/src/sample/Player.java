@@ -1,50 +1,50 @@
 package sample;
 
 import javafx.animation.TranslateTransition;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 public class Player {
     private static int id=0;
-    private Node player_image;
+    private ImageView player_image;
     private int cur_pos=0;
     private int ID;
     private boolean ready;
 
-    Player(){   //image
+    Player(ImageView img){   //image
+        this.player_image=img;
         this.ID=id;
         id++;
         this.ready=false;
+    }
+    static void dummy(ImageView img){
     }
     public void move_ahead(){
         linear_move(cur_pos,cur_pos+1);
     }
 
+    public int getCur_pos() {
+        return cur_pos;
+    }
+
     //in case of no snakes and ladder at the location of the piece
-    public void complete_move(){
-        int dice_no=3;
-        //1/ game start -1
-        //gaming
-        //<=100
-//        if(!ready){
-//            if(dice_no==1){
-//                ready=true;
-//
-//            }
-//            else{
-//
-//            }
-//        }
+    public void complete_move(int dice_no){
         if(!ready){
-            if(dice_no==1){
+            if(dice_no==1 && cur_pos+dice_no<=100){
                 ready=true;
-                move_ahead();
+                player_image.setLayoutX(159);
+                player_image.setLayoutY(528);
             }
         }
         else{
-            for(int i=0;i<dice_no;i++){
-                move_ahead();
+            if(cur_pos+dice_no<=100){
+                for(int i=0;i<dice_no;i++){
+                    move_ahead();
+                }
+
             }
         }
 
@@ -81,19 +81,16 @@ public class Player {
 
     public void linear_move(int prev_pos,int next_pos){
         //translate transition
-        int r=0,c=0;
+//        int r=0,c=0;
         int[] coordinate1=calculate(prev_pos);
         int[] coordinate2 =calculate(next_pos);
-        //coordinate1[0]-coordinate2[0]*tile_size+coordinate1[0]
-        int x1=0,y1=0;
-        int x2=20,y2=20;
         TranslateTransition translate=new TranslateTransition();
-        translate.setFromX(coordinate1[0]*39.2);
-        translate.setFromY(coordinate1[1]*56.8);
-        translate.setToX(coordinate2[0]*39.2);
-        translate.setToY(coordinate2[0]*56.8);
-        translate.setDuration(Duration.millis(500));
         translate.setNode(player_image);
+        translate.setFromX(coordinate1[1]*39.2);
+        translate.setFromY(-coordinate1[0]*56.8);
+        translate.setToX(coordinate2[1]*39.2);
+        translate.setToY(-coordinate2[0]*56.8);
+        translate.setDuration(Duration.millis(1000));
         translate.play();
         this.cur_pos=next_pos;
     }

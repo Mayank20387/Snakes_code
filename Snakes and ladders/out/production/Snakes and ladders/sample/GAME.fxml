@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button layoutX="461.0" layoutY="641.0" mnemonicParsing="false" text="PLAYER 1" />
+      <Button layoutX="572.0" layoutY="641.0" mnemonicParsing="false" text="PLAYER 2" />
+      <Button layoutX="336.0" layoutY="672.0" mnemonicParsing="false" onAction="#switchtomain" text="BACK" />
+      <Button fx:id="roll" layoutX="323.0" layoutY="628.0" mnemonicParsing="false" onAction="#roll_click" text="ROLL DICE" />
+      <ImageView fx:id="maingame" fitHeight="577.0" fitWidth="581.0" layoutX="58.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@maingame.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="blue_piece" fitHeight="41.0" fitWidth="37.0" layoutX="58.0" layoutY="635.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@blue.png-removebg-preview.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="red_piece" fitHeight="41.0" fitWidth="37.0" layoutX="114.0" layoutY="636.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@red.png-removebg-preview.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="dice" fitHeight="94.0" fitWidth="94.0" layoutX="196.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
