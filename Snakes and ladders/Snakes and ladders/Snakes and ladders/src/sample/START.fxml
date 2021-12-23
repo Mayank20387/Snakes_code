@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane fx:id="scene1pane" prefHeight="610.0" prefWidth="554.0" style="-fx-background-color: #880808;">
+         <children>
+            <Button fx:id="Startgame" layoutX="226.0" layoutY="482.0" mnemonicParsing="false" onAction="#switchtogame" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: #FFFF00;" text="START GAME">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="exit" layoutX="239.0" layoutY="543.0" mnemonicParsing="false" onAction="#exitgame_clicked" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #FFFF00;" text="EXIT">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Label alignment="CENTER" layoutX="110.0" layoutY="58.0" prefHeight="42.0" prefWidth="362.0" text="SNAKES &amp; LADDER" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="myimage1" fitHeight="347.0" fitWidth="483.0" layoutX="36.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@snakes.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="rules" layoutX="473.0" layoutY="20.0" mnemonicParsing="false" onAction="#rules_reg" opacity="0.99" prefHeight="20.0" prefWidth="54.0" style="-fx-background-color: #FFFF00;" text="Rules">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
